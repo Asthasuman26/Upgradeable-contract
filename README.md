@@ -1,5 +1,5 @@
 # **Upgradeable Contract**
-## **Overview**
+## *Overview*
 
 This project demonstrates the concept of upgradeable smart contracts in Ethereum. It focuses on solving one of the most important limitations of blockchain development: immutability.
 
@@ -9,7 +9,7 @@ This repository showcases how upgradeability works and why it is important in re
 
 ## *Why Upgradeable Contracts Are Important*
 
-## Smart contracts often manage:
+## *Smart contracts often manage:*
 
 User funds
 
@@ -19,7 +19,9 @@ Governance systems
 
 Long-term protocol logic
 
-Because they operate in a trustless environment, mistakes can be extremely costly. Upgradeability allows developers to:
+Because they operate in a trustless environment, mistakes can be extremely costly. 
+
+## *Upgradeability allows developers to:*
 
 Fix bugs after deployment
 
@@ -33,13 +35,13 @@ Maintain a consistent contract address
 
 This flexibility makes upgradeable contracts widely used in DeFi protocols, NFT platforms, DAOs, and enterprise blockchain systems.
 
-## **Core Concept Behind Upgradeability**
+## *Core Concept Behind Upgradeability*
 
 Upgradeable contracts typically rely on a proxy pattern.
 
 Instead of users interacting directly with a logic contract, they interact with a proxy contract. The proxy acts as a permanent gateway and forwards all calls to a separate implementation contract that contains the business logic.
 
-When an upgrade is needed:
+## *When an upgrade is needed:*
 
 A new implementation contract is deployed.
 
@@ -49,13 +51,13 @@ The stored data remains unchanged.
 
 This separation between data storage and logic is what makes upgrades possible.
 
-## **How State Is Preserved**
+## *How State Is Preserved*
 
 One of the key challenges in upgradeable contracts is maintaining stored data (state variables). The proxy holds the storage, while the implementation contract only contains logic.
 
 Because the storage layout must remain compatible across upgrades, developers must carefully manage:
 
-**The order of state variables**
+## *The order of state variables*
 
 Data types
 
@@ -63,13 +65,13 @@ Newly added variables
 
 If storage is not handled properly, it can lead to corrupted data or unexpected behavior.
 
-## **Constructors vs Initializers**
+## *Constructors vs Initializers*
 
 In traditional smart contracts, constructors are used to initialize state variables. However, constructors do not work the same way in upgradeable contracts because the logic contract is not directly deployed as the active contract.
 
 Instead, upgradeable contracts use initializer functions that can be executed once to set up the initial state. This ensures proper initialization when working through a proxy.
 
-## **Security Considerations**
+## *Security Considerations*
 
 Upgradeability introduces flexibility, but also additional risks:
 
@@ -101,7 +103,7 @@ Important design principles developers must understand
 
 It serves as a learning and experimentation environment for understanding one of the most essential advanced patterns in Ethereum smart contract development.
 
-## **Conclusion**
+## *Conclusion*
 
 Upgradeable contracts balance blockchain immutability with practical flexibility. While they require careful design and security awareness, they allow decentralized applications to grow, adapt, and improve over time without disrupting users or losing data.
 
